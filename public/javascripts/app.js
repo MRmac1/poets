@@ -1,23 +1,22 @@
 // import '../../node_modules/bootstrap/scss/bootstrap.scss';
-import './app.css';
-import React from 'react';
-import ReactDOM from 'react-dom';
 
-class App extends React.Component{
-    constructor() {
-        super();
-    }
-    render() {
-        return (
-          <div className="container">
-            <section className="jumbotron">
-              Search Github User
-            </section>
-          </div>
-        )
-    }
-};
+import React from 'react'
+import { render } from 'react-dom'
+import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 
-const app = document.createElement('div');
-document.body.appendChild(app);
-ReactDOM.render(<App />, app);
+//配置路由
+import App from './layout/app'
+import Home from './page/Home/'
+import Author from './page/Author/'
+import Dynasty from './page/Dynasty/'
+
+render(
+ <Router history={browserHistory}>
+   <Route path="/" component={App}>
+     <IndexRoute component={Home} />
+     <Route path="author" component={Author} />
+     <Route path="dynasty" component={Dynasty} />
+   </Route>
+ </Router>,
+ document.body
+);
