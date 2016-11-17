@@ -1,13 +1,21 @@
-import React, { PropTypes } from 'react'
+import React, { PropTypes, Component } from 'react'
+import AppLayout from '../../layout/AppLayout'
 
-class AuthorPage extends React.Component {
+class AuthorContent extends Component {
+  render () {
+    return (
+      <div>
+        <h2>DynastyPage</h2>
+        {"Welcome to your AuthorPage"}
+      </div>
+    )
+  }
+}
+
+class AuthorPage extends Component {
   render () {
     return(
-      <div>
-        <h2>AuthorPage</h2>
-        {/* 渲染这个 child 路由组件 */}
-        {this.props.children || "Welcome to your AuthorPage"}
-      </div>
+      <AppLayout title={'作者列表页'} content={ <AuthorContent /> } />
     );
   }
 }
