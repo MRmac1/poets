@@ -18,6 +18,10 @@ class AuthorPage extends Component {
       <AppLayout title={'作者列表页'} content={ <AuthorContent /> } />
     );
   }
+  // componentDidMount () {
+  //   let id = this.props.params.id;
+  //   console.log( 'AuthorPage id', id );
+  // }
 }
 
 export default AuthorPage;

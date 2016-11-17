@@ -1,14 +1,22 @@
-import React, { PropTypes } from 'react'
+import React, { PropTypes, Component } from 'react'
+import AppLayout from '../../layout/AppLayout'
 
-class DynastyPage extends React.Component {
+class DynastyContent extends Component {
   render () {
     return (
       <div>
-          <h2>DynastyPage</h2>
-          {/* 渲染这个 child 路由组件 */}
-          {this.props.children || "Welcome to your DynastyPage"}
-        </div>
-      );
+        <h2>DynastyPage</h2>
+        {"Welcome to your DynastyPage"}
+      </div>
+    )
+  }
+}
+
+class DynastyPage extends Component {
+  render () {
+    return(
+      <AppLayout title={'朝代列表页'} content={ <DynastyContent /> } />
+    );
   }
 }
 
